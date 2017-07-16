@@ -23,7 +23,7 @@ public class ArvoreAvl {
 			return true;
 		} else {
 
-			if (aInserir.getChave().getLote().compareTo(aComparar.getChave().getLote()) == -1 ) {
+			if (aInserir.getChave().compareTo(aComparar.getChave()) == -1 ) {
 
 				if (aComparar.getEsquerda() == null) {
 					aComparar.setEsquerda(aInserir);
@@ -34,7 +34,7 @@ public class ArvoreAvl {
 				else {
 					inserirAVL(aComparar.getEsquerda(), aInserir);}
 
-			} else if (aInserir.getChave().getLote().compareTo(aComparar.getChave().getLote()) == 1) {
+			} else if (aInserir.getChave().compareTo(aComparar.getChave()) == 1) {
 
 				if (aComparar.getDireita() == null) {
 					aComparar.setDireita(aInserir);
@@ -46,107 +46,7 @@ public class ArvoreAvl {
 					inserirAVL(aComparar.getDireita(), aInserir);}
 
 			} else {
-				if (aInserir.getChave().getEndereco().compareTo(aComparar.getChave().getEndereco()) == -1 ){
-					//inserção logo a esquerda
-					if (aComparar.getEsquerda() == null) {
-						aComparar.setEsquerda(aInserir);
-						aInserir.setPai(aComparar);
-						verificarBalanceamento(aComparar);
-						return true;
-					} 
-					else {
-						inserirAVL(aComparar.getEsquerda(), aInserir);}
-
-					
-				}
-				else if(aInserir.getChave().getEndereco().compareTo(aComparar.getChave().getEndereco()) == 1){
-					//insercao logo a direita
-					if (aComparar.getDireita() == null) {
-						aComparar.setDireita(aInserir);
-						aInserir.setPai(aComparar);
-						verificarBalanceamento(aComparar);
-						return true;
-					} 
-					else {
-						inserirAVL(aComparar.getDireita(), aInserir);}
-
-				}
-				else{
-					if(aInserir.getChave().getBloco().compareTo(aComparar.getChave().getBloco()) == -1){
-						//inserção logo a esquerda
-						if (aComparar.getEsquerda() == null) {
-							aComparar.setEsquerda(aInserir);
-							aInserir.setPai(aComparar);
-							verificarBalanceamento(aComparar);
-							return true;
-						} 
-						else {
-							inserirAVL(aComparar.getEsquerda(), aInserir);}
-					}
-					else if(aInserir.getChave().getBloco().compareTo(aComparar.getChave().getBloco()) == 1){
-						//insercao logo a direita
-						if (aComparar.getDireita() == null) {
-							aComparar.setDireita(aInserir);
-							aInserir.setPai(aComparar);
-							verificarBalanceamento(aComparar);
-							return true;
-						} 
-						else {
-							inserirAVL(aComparar.getDireita(), aInserir);}
-					}
-					else{
-						if (aInserir.getChave().getNumero().compareTo(aComparar.getChave().getNumero()) == -1){
-							//inserção logo a esquerda
-							if (aComparar.getEsquerda() == null) {
-								aComparar.setEsquerda(aInserir);
-								aInserir.setPai(aComparar);
-								verificarBalanceamento(aComparar);
-								return true;
-							} 
-							else {
-								inserirAVL(aComparar.getEsquerda(), aInserir);}
-						}
-						else if (aInserir.getChave().getNumero().compareTo(aComparar.getChave().getNumero()) == 1){
-							//insercao logo a direita
-							if (aComparar.getDireita() == null) {
-								aComparar.setDireita(aInserir);
-								aInserir.setPai(aComparar);
-								verificarBalanceamento(aComparar);
-								return true;
-							} 
-							else {
-								inserirAVL(aComparar.getDireita(), aInserir);}
-						}
-						else{
-							if (aComparar.getChave().getFornecedor().compareTo(aInserir.getChave().getFornecedor()) == -1){
-								//inserção logo a esquerda
-								if (aComparar.getEsquerda() == null) {
-									aComparar.setEsquerda(aInserir);
-									aInserir.setPai(aComparar);
-									verificarBalanceamento(aComparar);
-									return true;
-								} 
-								else {
-									inserirAVL(aComparar.getEsquerda(), aInserir);}
-							}
-							else if (aComparar.getChave().getFornecedor().compareTo(aInserir.getChave().getFornecedor()) == 1){
-								//insercao logo a direita
-								if (aComparar.getDireita() == null) {
-									aComparar.setDireita(aInserir);
-									aInserir.setPai(aComparar);
-									verificarBalanceamento(aComparar);
-									return true;
-								} 
-								else {
-									inserirAVL(aComparar.getDireita(), aInserir);}
-							}
-							else{
-								return false;
-							}
-						}
-					}
-				}
-
+				return false;
 			}
 		}
 		return false;
