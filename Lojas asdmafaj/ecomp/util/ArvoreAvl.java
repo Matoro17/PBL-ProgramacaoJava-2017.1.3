@@ -353,5 +353,26 @@ public class ArvoreAvl {
     	}
     }
 
+	public Produto[] arvoreVetor(int quantidadeMercadorias) {
+		Produto[] vetor = new Produto[quantidadeMercadorias];
+		int posicao =0;
+		arvoreVetorAVL(this.raiz, vetor, posicao);
+		return vetor;
+	}
+	
+	private void arvoreVetorAVL(No no, Produto[] vetor, int posicao){
+		if(no != null){
+			vetor[posicao] = no.getChave();
+			posicao++;
+			arvoreVetorAVL(no.getDireita(), vetor, posicao);
+			arvoreVetorAVL(no.getEsquerda(), vetor, posicao);
+			
+		}
+		else{
+			return;
+		}
+	}
+    
+    
 	
 }

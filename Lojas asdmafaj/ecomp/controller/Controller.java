@@ -111,6 +111,11 @@ public class Controller {
 		
 	}*/
 	
+	public void arvoreVetor(){
+		arvore.arvoreVetor(quantidadeMercadorias);
+		
+	}
+	
 	public Produto acharProdutoporCoda(String lote, String end, String bloco, String numero, String fornecedor){
 		return arvore.retornar(new Produto(lote, end, bloco, numero, fornecedor));
 	}
